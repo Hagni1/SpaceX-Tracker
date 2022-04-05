@@ -1,0 +1,45 @@
+.CreateRocketWrapper {
+    box-sizing: border-box;
+  display: flex;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+  .rocketGallery {
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+    width: 40%;
+    img {
+      object-fit: cover;
+      object-position: center center;
+      width: 100%;
+      height: 49vh;
+      box-sizing: border-box;
+    }
+  }
+}
+.CreateRocket {
+  color: white;
+  width: 60%;
+  height: 100vh;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: rgba($color: #000000, $alpha: 0.7);
+  padding: 2vh;
+  display: flex;
+  justify-content: space-around;
+  font-size: 2vh;
+  @media (max-width: 904px) {
+    font-size: 1.8vh;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+  img {
+    @media (max-width: 768px) {
+      margin: 0 5vw;
+    }
+    margin: 0 5vw;
+    height: 90vh;
+  }
+}

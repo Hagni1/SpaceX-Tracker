@@ -19,6 +19,10 @@ const AppProvider = ({ children }) => {
     datas: [],
     isLoaded: false,
   });
+  const [launch, setLaunch] = useState({
+    datas: [],
+    isLoaded: false,
+  });
 
   useEffect(() => {
     fetch("https://api.spacexdata.com/v4/launchpads")
@@ -42,9 +46,13 @@ const AppProvider = ({ children }) => {
       .then((response) => response.json())
       .then((datas) => setCrew({ datas, isLoaded: true }));
   }, []);
-
+  useEffect(() => {
+    fetch("https://api.spacexdata.com/v5/launches")
+      .then((response) => response.json())
+      .then((datas) => setLaunch({ datas, isLoaded: true }));
+  }, []);
   return (
-    <AppContext.Provider value={{ launchPad, payLoads, rockets, crew }}>
+    <AppContext.Provider value={{ launchPad, payLoads, rockets, crew, launch }}>
       {children}
     </AppContext.Provider>
   );

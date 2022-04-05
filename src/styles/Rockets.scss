@@ -1,0 +1,60 @@
+.RocketsWrapper {
+    height: 99vh;
+  h1 {
+    color: white;
+    text-align: center;
+  }
+  h3{
+    color: white;
+    font-size: 3vh;
+}
+  .Rockets {
+      height: 90vh;
+    margin: 0 auto;
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    align-items: flex-end;
+    text-align: center;
+    .falcon1 {
+        transition: 2s ease-in-out;
+        &:hover{
+            transition: 2s ease-in-out;
+            transform: translateY(-400%);
+        }
+        img {      
+          height: 22.25*0.7vh;
+      }
+    }
+    .falcon9 {
+        transition: 2s ease-in-out;
+        &:hover{
+            transition: 2s ease-in-out;
+            transform: translateY(-200%);
+        }
+      img {
+        height: 70*0.7vh;
+      }
+    }
+    .falconHeavy {
+        transition: 2s ease-in-out;
+        &:hover{
+            transition: 2s ease-in-out;
+            transform: translateY(-200%);
+        }
+      img {
+        height: 70*0.7vh;
+      }
+    }
+    .starship {
+        transition: 2s ease-in-out;
+        &:hover{
+            transition: 2s ease-in-out;
+            transform: translateY(-115%);
+        }
+      img {
+        height: 118*0.7vh;
+      }
+    }
+  }
+}
