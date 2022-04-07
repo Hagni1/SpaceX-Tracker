@@ -1,14 +1,15 @@
 import "../styles/CreateRocket.scss";
 
-const CreateRocket = ({ data }) => {
+const CreateRocket = ({ data,id,active,setSelected}) => {
   return (
-    <div className="CreateRocketWrapper">
-      <div className="CreateRocket">
-        <img src={require(`../img/${(data.name).replace(/\s/g, "").toLowerCase()}.png`)} alt="falcon1" />
+    <div className={`CreateRocketWrapper ${active}`} id={id}>
+      <div className="CreateRocket" >
+        <span />
+        <img onClick={()=>setSelected(false)} src={require(`../img/${(data.name).replace(/\s/g, "").toLowerCase()}.png`)} alt="falcon1" />
         <div className="rocketDescript">
           <h1>{data.name}</h1>
           <h3>{data.description}</h3>
-          <h4>Active: {data.active ? "true" : "Retired"}</h4>
+          <h4>Active: {data.active ? "true" : "false"}</h4>
           <h4>Country : {data.country}</h4>
           <h4>First flight: {data.first_flight}</h4>
           <h4>
@@ -24,6 +25,7 @@ const CreateRocket = ({ data }) => {
           <a target="_blank" rel="noopener noreferrer" href={data.wikipedia}>
             <button>Wikipedia</button>
           </a>
+          <h2 className="clickToGoBack"> &lt;- click on rocket to go back</h2>
         </div>
       </div>
       <div className="rocketGallery">

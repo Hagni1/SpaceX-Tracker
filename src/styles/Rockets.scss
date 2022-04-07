@@ -1,6 +1,11 @@
 .RocketsWrapper {
-    height: 99vh;
+    height: 98vh;
+    .headerUp{
+      transition: 1s ease-in-out  ;
+      transform: translateY(-100vh);
+    }
   h1 {
+    transition: 1s ease-in-out  ;
     color: white;
     text-align: center;
   }
@@ -16,45 +21,64 @@
     justify-content: space-around;
     align-items: flex-end;
     text-align: center;
+    .active{
+      transition: 1s ease-in-out  ;
+      transform: translateY(-100vh);
+    }
+    .inActive{
+      transition: 2s ease-in-out  ;
+      transform: translateY(100vh);
+    }
     .falcon1 {
-        transition: 2s ease-in-out;
-        &:hover{
-            transition: 2s ease-in-out;
-            transform: translateY(-400%);
-        }
-        img {      
+      transition-delay: 1s;
+      transition: 1s ease-in-out  ;
+        img { 
           height: 22.25*0.7vh;
       }
     }
     .falcon9 {
-        transition: 2s ease-in-out;
-        &:hover{
-            transition: 2s ease-in-out;
-            transform: translateY(-200%);
-        }
+      transition-delay: 1s;
+      transition: 1s ease-in-out  ;
       img {
         height: 70*0.7vh;
       }
     }
-    .falconHeavy {
-        transition: 2s ease-in-out;
-        &:hover{
-            transition: 2s ease-in-out;
-            transform: translateY(-200%);
-        }
+    .falconheavy {
+      transition-delay: 1s;
+      transition: 1s ease-in-out  ;
       img {
         height: 70*0.7vh;
       }
     }
     .starship {
-        transition: 2s ease-in-out;
-        &:hover{
-            transition: 2s ease-in-out;
-            transform: translateY(-115%);
-        }
+      transition-delay: 1s;
+      transition: 1s ease-in-out  ;
       img {
         height: 118*0.7vh;
       }
     }
   }
+}
+.pagesUnderRockets{
+.CreateRocketWrapper {
+  overflow: scroll;
+  transition: 1s ease-in-out  ;
+  position: absolute;
+  width: 100%;
+  top:100vh;
+}
+}
+.pageUp{
+  width: 100%;
+  top:0vh !important;
+  left: 0;
+  .CreateRocket{
+    transition: 1s ease-in-out  ;
+    img{
+      transition: 1s ease-in-out  ;
+      transform: translateY(-95vh);
+      transition-delay: 1s;
+    }
+  }
+
 }

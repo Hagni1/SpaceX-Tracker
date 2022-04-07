@@ -1,174 +1,28 @@
 .lastestLaunch {
-    box-sizing: border-box;
-    color: white;
-    background-color: rgba($color: #000000, $alpha: 0.7);
-    width: 20%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    text-align: center;
-    align-items: center;
-    transition: 0.3s ease;
-    font-size: 1.9vh;
-    @media (max-width: 768px) {
-      width: 100%;
-      height: 50vh;
-      gap: 3vh 0;
-      .missionParagraph{
-        font-size: 1.5vh;
-        width: 96%;
-      }
-    }
-    flex-wrap: wrap;
-  
-    img {
-      height: 20%;
-    }
-  }
-  .lastestLaunchWrapper {
+  box-sizing: border-box;
+  color: white;
+  background-color: rgba($color: #000000, $alpha: 0.7);
+  width: 20%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+  transition: 0.3s ease;
+  font-size: 1.9vh;
+  @media (max-width: 768px) {
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    @media (max-width: 768px) {
-      flex-direction: column;
-    }
-    span {
-      width: 50%;
-    }
-    .lastestLaunchButton {
-      position: absolute;
-      top: 50vh;
-      @media (max-width: 768px) {
-        left: 50% !important;
-        top: 45vh;
-      }
-      left: 17%;
-      padding: 2px;
-      transition: 0.3s ease;
-    }
-    .isExtendedButton {
-      @media (max-width: 768px) {
-        top: 95vh !important;
-        left: 50% !important;
-      }
-      left: 45% !important;
-      transition: 0.3s ease;
-    }
-    .isExtended {
-      width: 50% !important;
-      @media (max-width: 768px) {
-        width: 100% !important;
-        height: 100vh !important;
-      }
-      z-index: 2;
-      transition: 0.3s ease;
-      .videoImgWrapper {
-        .videoImg {
-          transition: 0.3s ease;
-          width: 64% !important;
-          @media (max-width: 768px) {
-            width: 100% !important;
-          }
-        }
-      }
-    }
-    .isExtendedVideo {
-      @media (max-width: 768px) {
-        width: 100% !important;
-      }
-      width: 50%;
-      z-index: 2;
-      transition: 0.3s ease;
-      .videoImgWrapper {
-        h2 {
-          @media (max-width: 768px) {
-            // left: 110% !important;
-            top: 115vh;
-          }
-        }
-        .videoBackground{
-          transition: 0.3s ease;
-          width: 50%;
-        }
-        .videoImg {
-          transition: 0.3s ease;
-          width: 50%;
-          @media (max-width: 768px) {
-            width: 100% !important;
-            height: 50vh;
-            top: 100vh;
-          }
-        }
-      }
-    }
-    .lastestVideoWrapper {
-      flex-grow: 1;
-      height: 100vh;
-      @media (max-width: 768px) {
-        width: 100%;
-        height: 50vh;
-      }
+    height: 50vh;
+    gap: 3vh 0;
+    .missionParagraph {
+      font-size: 1.5vh;
+      width: 96%;
     }
   }
-  
-  .lastestVideo {
-    width: 100%;
-    height: 100%;
-    transition: 0.3s ease;
+  flex-wrap: wrap;
+
+  img {
+    height: 20%;
   }
-  .hidden {
-    visibility: hidden !important;
-  }
-  .videoImgWrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    transition: 0.3s ease;
-    height: 100%;
-    .videoBackground{
-      @media (min-width: 769px) {
-        z-index: 2;
-        background: url(../img/video.jpg);
-        background-size: cover;
-        background-attachment: fixed;
-        background-position: right bottom;
-        top: 0%;
-        width: 81%;
-        height: 100vh;
-        position: absolute;
-      }
-    }
-    .videoImg {
-      z-index: 0;
-      transition: 0.3s ease;
-      top: 0%;
-      position: absolute;
-      width: 81%;
-      @media (min-width: 769px) {
-        display: none;
-      }
-      @media (max-width: 768px) {
-        object-fit: cover;
-        object-position: center;
-        width: 100%;
-        height: 50vh;
-        top: 50vh;
-      }
-      height: 100vh;
-    }
-    h2 {
-      z-index: 3;
-      font-size: 2vh;
-      top: 70%;
-      position: absolute;
-      background-color: white;
-      padding: 2vh;
-      border-radius: 5vh;
-      position: absolute;
-      display: block;
-      text-align: center;
-    }
-  }
-  
+}

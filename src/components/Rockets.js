@@ -1,42 +1,41 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
 import { AppContext } from "../context/AppContext";
 import "../styles/Rockets.scss";
-// import CreateRocket from "./CreateRocket";
+import CreateRocket from "./CreateRocket";
 const Rockets = () => {
   const { rockets } = useContext(AppContext);
-  console.log(rockets.datas);
+  const [selected, setSelected] = useState(false);
   return (
-    // <div>{rockets.isLoaded && <CreateRocket data={rockets.datas[0]} />}</div>
-    <div className="RocketsWrapper">
-      <h1>Rockets size comparison</h1>
-      <section className="Rockets">
-        <article className="falcon1">
-          <Link to={"/falcon1"}>
-            <img src={require("../img/falcon1.png")} alt="falcon1" />
-            <h3>Falcon 1</h3>
-          </Link>
-        </article>
-        <article className="falcon9">
-          <Link to={"/falcon9"}>
-          <img src={require("../img/falcon9.png")} alt="falcon9" />
-          <h3>Falcon 9</h3>
-        </Link>
-        </article>
-        <article className="falconHeavy">
-          <Link to={"/falconheavy"}>
-          <img src={require("../img/falconheavy.png")} alt="falcon Heavy" />
-          <h3>Falcon Heavy</h3>
-        </Link>
-        </article>
-        <article className="starship">
-          <Link to={"/starship"}>
-          <img src={require("../img/starship.png")} alt="starship" />
-          <h3>SpaceShip</h3>
-        </Link>
-        </article>
-      </section>
-    </div>
+    <>
+      <div className="RocketsWrapper">
+        <h1 className={selected && 'headerUp'}>Rockets size comparison</h1>
+        <section className="Rockets">
+          {rockets.datas.map((data) => (
+            <article
+              className={
+                `${data.name.replace(/\s/g, "").toLowerCase()} ${selected && (data.name===selected? "active": 'inActive')}`}
+              onClick={() =>setSelected(data.name)
+              }
+            >
+              <img
+                src={require(`../img/${`${data.name
+                  .replace(/\s/g, "")
+                  .toLowerCase()}`}.png`)}
+                alt={data.name.replace(/\s/g, "").toLowerCase()}
+              />
+              <h3>{data.name}</h3>
+            </article>
+          ))}
+        </section>
+      </div>
+      <div className="pagesUnderRockets">
+        {rockets.isLoaded
+          ? rockets.datas.map((data) => (
+              <CreateRocket setSelected={setSelected} active={data.name===selected? "pageUp": ''} key={data.name} id={data.name} data={data} />
+            ))
+          : null}
+      </div>
+    </>
   );
 };
 

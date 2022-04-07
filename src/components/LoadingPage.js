@@ -1,4 +1,4 @@
-import "../styles/Home.scss";
+import "../styles/LoadingPage.scss";
 const Home = () => {
 
   return (
