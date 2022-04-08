@@ -3,6 +3,7 @@ import { createContext, useEffect, useState } from "react";
 export const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
+  const [selected, setSelected]= useState(false)
   const [launchPad, setLaunchPad] = useState({
     datas: [],
     isLoaded: false,
@@ -52,7 +53,7 @@ const AppProvider = ({ children }) => {
       .then((datas) => setLaunch({ datas, isLoaded: true }));
   }, []);
   return (
-    <AppContext.Provider value={{ launchPad, payLoads, rockets, crew, launch }}>
+    <AppContext.Provider value={{ launchPad, payLoads, rockets, crew, launch, selected, setSelected }}>
       {children}
     </AppContext.Provider>
   );

@@ -1,5 +1,9 @@
 .RocketsWrapper {
-    height: 98vh;
+    height: 100vh;
+    overflow: hidden;
+    button{
+      position: fixed;
+    }
     .headerUp{
       transition: 1s ease-in-out  ;
       transform: translateY(-100vh);
@@ -8,6 +12,7 @@
     transition: 1s ease-in-out  ;
     color: white;
     text-align: center;
+    font-size: 4vh;
   }
   h3{
     color: white;
@@ -24,6 +29,9 @@
     .active{
       transition: 1s ease-in-out  ;
       transform: translateY(-100vh);
+      @media (max-width: 1000px) {
+        transform: translateY(-105vh);
+      }
     }
     .inActive{
       transition: 2s ease-in-out  ;

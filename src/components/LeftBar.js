@@ -1,9 +1,10 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 import '../styles/LeftBar.scss'
 
 const LeftBar = ({data, isExtended, setIsExtended}) => {
-    const { rockets, launchPad, payLoads, crew } = useContext(AppContext);
+    const { rockets, launchPad, payLoads, crew,setSelected } = useContext(AppContext);
     return ( 
         <section className={`lastestLaunch ${isExtended && "isExtended"}`}>
         <button
@@ -20,8 +21,10 @@ const LeftBar = ({data, isExtended, setIsExtended}) => {
         <span>
           <h3>Rocket:</h3>
           <p>
+            <Link to='/Rockets' onClick={()=>setSelected(rockets.datas.filter((el)=>el.id===data.rocket)[0].name)}>
             {rockets.isLoaded &&
               rockets.datas.filter((el) => el.id === data.rocket)[0].name}
+            </Link>
           </p>
         </span>
         <span>
