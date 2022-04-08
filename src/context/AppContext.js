@@ -5,53 +5,54 @@ export const AppContext = createContext();
 const AppProvider = ({ children }) => {
   const [selected, setSelected]= useState(false)
   const [launchPad, setLaunchPad] = useState({
-    datas: [],
+    data: [],
     isLoaded: false,
   });
   const [crew, setCrew] = useState({
-    datas: [],
+    data: [],
     isLoaded: false,
   });
   const [payLoads, setPayLoads] = useState({
-    datas: [],
+    data: [],
     isLoaded: false,
   });
   const [rockets, setRockets] = useState({
-    datas: [],
+    data: [],
     isLoaded: false,
   });
   const [launch, setLaunch] = useState({
-    datas: [],
+    data: [],
     isLoaded: false,
   });
 
   useEffect(() => {
     fetch("https://api.spacexdata.com/v4/launchpads")
       .then((response) => response.json())
-      .then((datas) => setLaunchPad({ datas, isLoaded: true }));
+      .then((data) => setLaunchPad({ data, isLoaded: true }));
   }, []);
 
   useEffect(() => {
     fetch("https://api.spacexdata.com/v4/payloads")
       .then((response) => response.json())
-      .then((datas) => setPayLoads({ datas, isLoaded: true }));
+      .then((data) => setPayLoads({ data, isLoaded: true }));
   }, []);
 
   useEffect(() => {
     fetch("https://api.spacexdata.com/v4/rockets")
       .then((response) => response.json())
-      .then((datas) => setRockets({ datas, isLoaded: true }));
+      .then((data) => setRockets({ data, isLoaded: true }));
   }, []);
   useEffect(() => {
     fetch("https://api.spacexdata.com/v4/crew")
       .then((response) => response.json())
-      .then((datas) => setCrew({ datas, isLoaded: true }));
+      .then((data) => setCrew({ data, isLoaded: true }));
   }, []);
   useEffect(() => {
     fetch("https://api.spacexdata.com/v5/launches")
       .then((response) => response.json())
-      .then((datas) => setLaunch({ datas, isLoaded: true }));
+      .then((data) => setLaunch({ data, isLoaded: true }));
   }, []);
+  console.log(launchPad.data)
   return (
     <AppContext.Provider value={{ launchPad, payLoads, rockets, crew, launch, selected, setSelected }}>
       {children}

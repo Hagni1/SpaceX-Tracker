@@ -17,7 +17,7 @@ const Rockets = () => {
       <button className={selectedRocket && "headerUp"} onClick={() => navigate(-1)}>go back</button>
         <h1 className={selectedRocket && "headerUp"}>Rockets size comparison</h1>
         <section className="Rockets">
-          {rockets.datas.map((data) => (
+          {rockets.data.map((data) => (
             <article
               className={`${data.name.replace(/\s/g, "").toLowerCase()} ${
                 selectedRocket && (data.name === selectedRocket ? "active" : "inActive")
@@ -37,7 +37,7 @@ const Rockets = () => {
       </div>
       <div className="pagesUnderRockets">
       
-           {rockets.datas.map((data) => (
+           {rockets.data.map((data) => (
               <CreateRocket
                 setSelected={setSelectedRocket}
                 active={data.name === selectedRocket && "pageUp"}
