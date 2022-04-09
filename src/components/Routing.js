@@ -8,8 +8,8 @@ import '../styles/Routing.scss'
 import Navigation from "./Navigation";
 import Crew from "./Crew";
 import CreateCrewMember from "./CreateCrewMember";
-import LaumchPad from "./LaunchPad";
 import LaunchPad from "./LaunchPad";
+import CreateLaunchPad from "./CreateLaunchPad";
 const Routing = () => {
   const { rockets, launch,crew, launchPad } = useContext(AppContext)
   return (
@@ -20,8 +20,9 @@ const Routing = () => {
         {rockets.isLoaded ? <Route path="/Rockets" element={<Rockets />} /> : <Route path='*' element={<LoadingPage />} />}
         {launch.isLoaded ?  <Route  path='/Navigation' element={<Navigation/>} /> : <Route path='*' element={<LoadingPage />} />}
         {crew.isLoaded ? <Route path='/Crew' element={<Crew />} /> : <Route path='*' element={<LoadingPage />} />}
-        {crew.isLoaded ? crew.data.map(data=> <Route path={`/Crew/${data.name.replace(/\s/g, "").toLowerCase()}`} element={<CreateCrewMember data={data} />} />) : <Route path='*' element={<LoadingPage />} />}
-        {launchPad.isLoaded? <Route path='/LaunchPad' element={<LaunchPad />} /> : <Route path='*' element={<LoadingPage />} />}
+        {crew.isLoaded ? crew.data.map(data=> <Route path={`/Crew/${data.id}`} element={<CreateCrewMember data={data} />} />) : <Route path='*' element={<LoadingPage />} />}
+        {launchPad.isLoaded ? <Route path='/LaunchPad' element={<LaunchPad />} /> : <Route path='*' element={<LoadingPage />} />}
+        {launchPad.isLoaded ? launchPad.data.map(data=> <Route path={`/LaunchPad/${data.name.replace(/\s/g, "").toLowerCase()}`} element={<CreateLaunchPad data={data} />} />) : <Route path='*' element={<LoadingPage />} />}
     </Routes>
     </>
   );

@@ -1,0 +1,22 @@
+.toggleButton{
+        color: white !important;
+}
+.gridLaunches{
+   width: 80%;
+   margin: 0 auto;
+   display: flex;
+   justify-content: space-evenly;
+   flex-wrap: wrap;
+    .gridLaunchesItem{
+    width: 200px;
+    padding: 15px;
+    border: 3px solid white;
+    text-decoration: none;
+    color: white;
+    &:hover {
+        border: 3px solid grey;
+        transition: 0.3s;
+        color: #aaaaaa;
+      }
+    }
+}

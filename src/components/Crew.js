@@ -9,7 +9,7 @@ const Crew = () => {
           <><button onClick={() => navigate(-1)}>go back</button><div className="crew">
           {crew.data.map((el) => (
               <Link
-                  to={`/Crew/${el.name.replace(/\s/g, "").toLowerCase()}`}
+                  to={`/Crew/${el.id}`}
                   className="crewItem"
               >
                   {console.log(el)}

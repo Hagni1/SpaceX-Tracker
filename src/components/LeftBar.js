@@ -57,7 +57,7 @@ const LeftBar = ({data, isExtended, setIsExtended}) => {
                               .map((item) => item.crew)
                               .some((crew) => crew === item.id)
                           )
-                          .map((item) =><Link to={`/Crew/${item.name.replace(/\s/g, "").toLowerCase()}`}> <p key={item.name}>{item.name}</p> </Link>)
+                          .map((item) =><Link to={`/Crew/${item.id}`}> <p key={item.name}>{item.name}</p> </Link>)
                       : "unmanned"}
                        <Link to='/Crew'><button>Check Crew Members</button></Link>
                   </span>
@@ -81,11 +81,12 @@ const LeftBar = ({data, isExtended, setIsExtended}) => {
               {launchPad.isLoaded && (
                 <p>
                   {
-                    launchPad.data.filter((el) => el.id === data.launchpad)[0]
-                      .name
+                    <Link to={`/LaunchPad/${ launchPad.data.filter((el) => el.id === data.launchpad)[0].name.replace(/\s/g, "").toLowerCase()}`}> <p>{launchPad.data.filter((el) => el.id === data.launchpad)[0]
+                  .name}</p> </Link>
                   }
                 </p>
               )}
+              <Link to='/LaunchPad'><button>Check LaunchPads</button></Link>
             </span>
             <span>
               <h3>Region:</h3>

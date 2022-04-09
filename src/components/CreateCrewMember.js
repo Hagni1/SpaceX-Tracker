@@ -1,6 +1,6 @@
 import {  Grid } from "@mui/material";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 import "../styles/CreateCrewMember.scss";
 const CreateCrewMember = ({ data }) => {
@@ -32,7 +32,9 @@ const CreateCrewMember = ({ data }) => {
                       .filter((item) => data.launches.includes(item.id))
                       .map((item) => (
                           <h3>
-                              {item.date_local.slice(0, 10)} - {item.name}{" "}
+                               <Link key={item.flight_number}  to={`/${item.flight_number}` }>
+                                  {item.date_local.slice(0, 10)} - {item.name}{" "}
+                              </Link>
                           </h3>
                       ))}
           </Grid>
