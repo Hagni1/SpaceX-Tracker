@@ -52,7 +52,6 @@ const AppProvider = ({ children }) => {
       .then((response) => response.json())
       .then((data) => setLaunch({ data, isLoaded: true }));
   }, []);
-  console.log(launchPad.data)
   return (
     <AppContext.Provider value={{ launchPad, payLoads, rockets, crew, launch, selected, setSelected }}>
       {children}

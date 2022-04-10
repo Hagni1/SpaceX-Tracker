@@ -1,12 +1,14 @@
+import { Button } from "@mui/material";
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 import "../styles/Crew.scss";
+import theme from "../theme/AppTheme";
 const Crew = () => {
     const { crew } = useContext(AppContext);
     const navigate = useNavigate();
   return (
-          <><button onClick={() => navigate(-1)}>go back</button><div className="crew">
+          <><Button theme={theme} color='primary' variant="contained" onClick={() => navigate(-1)}>go back</Button><div className="crew">
           {crew.data.map((el) => (
               <Link
                   to={`/Crew/${el.id}`}

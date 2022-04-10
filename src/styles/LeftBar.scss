@@ -6,8 +6,12 @@
     flex-direction: column;
   }
   span {
+
+  h3{
+    font-size: 2vh;
+  }
     width: 50%;
-    flex: 1 0 17%;
+    flex: 1 0 15%;
     a{
       color: white;
       text-decoration: none;
@@ -18,19 +22,30 @@
     position: absolute;
     top: 50vh;
     @media (max-width: 768px) {
-      left: 50% !important;
-      top: 45vh;
+      left: 45% !important;
+      top: 43vh;
     }
-    left: 17%;
+    left: 15%;
     padding: 2px;
     transition: 0.3s ease;
   }
   .isExtendedButton {
     @media (max-width: 768px) {
-      top: 95vh !important;
-      left: 50% !important;
+      top: 93vh !important;
+      left: 45% !important;
     }
     left: 45% !important;
     transition: 0.3s ease;
+  }
+}
+.isExtendedOpacity{
+  transition: 0.3s;
+}
+.MuiButton-text{
+  font-size: 1.8vh;
+  padding: 0;
+  text-transform: none;
+  span{
+    width: 100%;
   }
 }

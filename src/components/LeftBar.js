@@ -1,18 +1,21 @@
+import { Button } from "@mui/material";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 import '../styles/LeftBar.scss'
+import theme from "../theme/AppTheme";
 
 const LeftBar = ({data, isExtended, setIsExtended}) => {
-    const { rockets, launchPad, payLoads, crew,setSelected } = useContext(AppContext);
+  const { rockets, launchPad, payLoads, crew, setSelected } = useContext(AppContext);
     return ( 
         <section className={`lastestLaunch ${isExtended && "isExtended"}`}>
-        <button
+        <Button
+          theme={theme} color='primary'
           className={`lastestLaunchButton ${isExtended && "isExtendedButton"}`}
           onClick={() => setIsExtended(!isExtended)}
         >
           {isExtended ? "<" : ">"}
-        </button>
+        </Button>
         <img src={data.links.patch.small} alt="" />
         <span>
           <h3>Mision name:</h3>
@@ -22,16 +25,18 @@ const LeftBar = ({data, isExtended, setIsExtended}) => {
           <h3>Rocket:</h3>
           <p>
             <Link to='/Rockets' onClick={()=>setSelected(rockets.data.filter((el)=>el.id===data.rocket)[0].name)}>
-            {rockets.isLoaded &&
-              rockets.data.filter((el) => el.id === data.rocket)[0].name}
-            </Link>
+              {rockets.isLoaded &&
+                <Button theme={theme} color='primary'>
+              {rockets.data.filter((el) => el.id === data.rocket)[0].name}
+                </Button>}
+              </Link>
           </p>
-            <Link to='/Rockets'><button>Check Rockets</button></Link>
+      <Button theme={theme} color='primary'><Link to='/Rockets'>Check Rockets</Link></Button>
         </span>
         <span>
           <h3>Flight number:</h3>
           <p>{data.flight_number}</p>
-          <Link to='/Navigation'><button>Check other mission</button></Link>
+          <Link to='/Navigation'><Button theme={theme} color='primary'>Check other mission</Button></Link>
         </span>
         <span>
           <h3>Date (UTC): </h3>
@@ -41,7 +46,7 @@ const LeftBar = ({data, isExtended, setIsExtended}) => {
         </span>
         {isExtended && (
           <>
-            <span>
+            <span className="isExtendedOpacity">
               {crew.isLoaded && (
                 <>
                   <h3>Crew:</h3>
@@ -57,15 +62,15 @@ const LeftBar = ({data, isExtended, setIsExtended}) => {
                               .map((item) => item.crew)
                               .some((crew) => crew === item.id)
                           )
-                          .map((item) =><Link to={`/Crew/${item.id}`}> <p key={item.name}>{item.name}</p> </Link>)
+                          .map((item) =><Link to={`/Crew/${item.id}`}> <p key={item.name}><Button theme={theme} color='primary'>{item.name}</Button></p> </Link>)
                       : "unmanned"}
-                       <Link to='/Crew'><button>Check Crew Members</button></Link>
+                       <Link to='/Crew'><p><Button theme={theme} color='primary'>Check All Crew Members</Button></p></Link>
                   </span>
                 </>
               )}
             </span>
 
-            <span>
+            <span className="isExtendedOpacity">
               <h3>Payload:</h3>
               {payLoads.isLoaded && (
                 <p>
@@ -81,12 +86,12 @@ const LeftBar = ({data, isExtended, setIsExtended}) => {
               {launchPad.isLoaded && (
                 <p>
                   {
-                    <Link to={`/LaunchPad/${ launchPad.data.filter((el) => el.id === data.launchpad)[0].name.replace(/\s/g, "").toLowerCase()}`}> <p>{launchPad.data.filter((el) => el.id === data.launchpad)[0]
-                  .name}</p> </Link>
+                    <Link to={`/LaunchPad/${ launchPad.data.filter((el) => el.id === data.launchpad)[0].name.replace(/\s/g, "").toLowerCase()}`}> <p> <Button theme={theme} color='primary'>{launchPad.data.filter((el) => el.id === data.launchpad)[0]
+                  .name}</Button> </p> </Link>
                   }
                 </p>
               )}
-              <Link to='/LaunchPad'><button>Check LaunchPads</button></Link>
+              <Link to='/LaunchPad'><Button theme={theme} color='primary'>Check LaunchPads</Button></Link>
             </span>
             <span>
               <h3>Region:</h3>

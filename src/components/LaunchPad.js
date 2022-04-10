@@ -1,13 +1,17 @@
+import { Button } from "@mui/material";
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 import '../styles/LaunchPad.scss'
+import theme from "../theme/AppTheme";
 const LaunchPad = () => {
     const { launchPad } = useContext(AppContext);
     const navigate = useNavigate();
     console.log(launchPad.data)
     return ( 
-        <><button className="launchPadButton" onClick={() => navigate(-1)}>go back</button><div className="launchPad">
+        <> 
+            <Button theme={theme} color='primary' variant="contained" onClick={() => navigate(-1)}>go back</Button>
+            <div className="launchPad">
         {launchPad.data.map((el) => (
             <Link
                 to={`/launchPad/${el.name.replace(/\s/g, "").toLowerCase()}`}

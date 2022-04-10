@@ -1,8 +1,9 @@
-import { Grid, ToggleButton, ToggleButtonGroup } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 import "../styles/CreateLaunchPad.scss";
+import theme from "../theme/AppTheme";
 const CreateLaunchPad = ({ data }) => {
   const { launch } = useContext(AppContext);
   const navigate = useNavigate();
@@ -19,12 +20,10 @@ const CreateLaunchPad = ({ data }) => {
       .then((response) => response.json())
       .then((data) => setWeather({ data, isLoaded: true }));
   }, [units]);
-  console.log(weather);
   return (
-    <>
-      <button class="createCrewMemberButton" onClick={() => navigate(-1)}>
-        go back
-      </button>
+    <div className="createLaunchPadWrapper">
+      <Button theme={theme} color='primary' variant="contained" onClick={() => navigate(-1)}>go back</Button>
+
       <Grid
         className="gridContainer"
         container
@@ -75,7 +74,7 @@ const CreateLaunchPad = ({ data }) => {
           )}
         </Grid>
       </Grid>
-    </>
+      </div>
   );
 };
 
