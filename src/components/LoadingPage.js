@@ -1,10 +1,10 @@
+import { CircularProgress } from "@mui/material";
 import "../styles/LoadingPage.scss";
 const Home = () => {
 
   return (
-    <h1 className="Loading">
-      Your page is loading
-    </h1>
+    <CircularProgress />
+
   )
 }
 export default Home;

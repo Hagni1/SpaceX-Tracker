@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 import "../styles/Rockets.scss";
 import theme from "../theme/AppTheme";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import CreateRocket from "./CreateRocket";
 const Rockets = () => {
   const { rockets,selected,setSelected } = useContext(AppContext);
@@ -16,7 +17,7 @@ const Rockets = () => {
   return (
     <>
       <div className="RocketsWrapper">
-      <Button className={selectedRocket && "headerUp"} theme={theme} color='primary' variant="contained" onClick={() => navigate(-1)}>go back</Button>
+      <Button className={selectedRocket && "headerUp"} theme={theme} color='primary' variant="contained" onClick={() => navigate(-1)}><ArrowBackIcon className='arrow'/></Button>
         <h1 className={selectedRocket && "headerUp"}>Rockets size comparison</h1>
         <section className="Rockets">
           {rockets.data.map((data) => (

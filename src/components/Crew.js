@@ -4,11 +4,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 import "../styles/Crew.scss";
 import theme from "../theme/AppTheme";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 const Crew = () => {
     const { crew } = useContext(AppContext);
     const navigate = useNavigate();
   return (
-          <><Button theme={theme} color='primary' variant="contained" onClick={() => navigate(-1)}>go back</Button><div className="crew">
+          <><Button theme={theme} color='primary' variant="contained" onClick={() => navigate(-1)}><ArrowBackIcon className='arrow'/></Button><div className="crew">
           {crew.data.map((el) => (
               <Link
                   to={`/Crew/${el.id}`}

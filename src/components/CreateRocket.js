@@ -1,3 +1,4 @@
+import { Table, TableCell, TableRow } from "@mui/material";
 import "../styles/CreateRocket.scss";
 
 const CreateRocket = ({ data,id,active,setSelected}) => {
@@ -8,20 +9,44 @@ const CreateRocket = ({ data,id,active,setSelected}) => {
         <img onClick={()=>setSelected(false)} src={require(`../img/${(data.name).replace(/\s/g, "").toLowerCase()}.png`)} alt="falcon1" />
         <div className="rocketDescript">
           <h1>{data.name}</h1>
-          <h3>{data.description}</h3>
-          <h4>Active: {data.active ? "true" : "false"}</h4>
-          <h4>Country : {data.country}</h4>
-          <h4>First flight: {data.first_flight}</h4>
-          <h4>
-            Height: {data.height.meters} m / {data.height.feet} ft
-          </h4>
-          <h4>
-            Diameter: {data.diameter.meters} m / {data.diameter.feet} ft
-          </h4>
-          <h4>
-            Mass: {data.mass.kg} kg / {data.mass.lb} lb
-          </h4>
-          <h4>Launch cost: {(data.cost_per_launch)} $</h4>
+        <Table>
+                <TableRow>
+                    <TableCell>Descritption</TableCell>
+                    <TableCell>{data.description}</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>Active</TableCell>
+                    <TableCell>{data.active ? "true" : "false"}</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>Country</TableCell>
+                    <TableCell>{data.country}</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>First flight</TableCell>
+                    <TableCell>{data.first_flight}</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>Height</TableCell>
+                    <TableCell>{data.height.meters} m / {data.height.feet} ft</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>Diameter</TableCell>
+                    <TableCell>{data.diameter.meters} m / {data.diameter.feet} ft</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>Diameter</TableCell>
+                    <TableCell>{data.diameter.meters} m / {data.diameter.feet} ft</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>Mass</TableCell>
+                    <TableCell>{data.mass.kg} kg / {data.mass.lb} lb</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>Launch cost</TableCell>
+                    <TableCell>{(data.cost_per_launch)} $</TableCell>
+                </TableRow>
+          </Table>
           <a target="_blank" rel="noopener noreferrer" href={data.wikipedia}>
             <button>Wikipedia</button>
           </a>

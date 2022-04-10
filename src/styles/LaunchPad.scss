@@ -41,4 +41,20 @@
         }
       }
   }
+  .Button{
+    margin: 2vh 0 0 2vw !important;
+  }
+  .arrow{
+    animation: slide1 1s ease-in-out infinite;
+    margin-left: 9px;
+  }
+  @keyframes slide1 {
+    0%,
+    100% {
+      transform: translate(-5px, 0);
+    }
   
+    50% {
+      transform: translate(5px, 0);
+    }
+  }

@@ -4,13 +4,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 import '../styles/LaunchPad.scss'
 import theme from "../theme/AppTheme";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 const LaunchPad = () => {
     const { launchPad } = useContext(AppContext);
     const navigate = useNavigate();
     console.log(launchPad.data)
     return ( 
         <> 
-            <Button theme={theme} color='primary' variant="contained" onClick={() => navigate(-1)}>go back</Button>
+            <Button theme={theme} color='primary' variant="contained" onClick={() => navigate(-1)}><ArrowBackIcon className='arrow'/></Button>
             <div className="launchPad">
         {launchPad.data.map((el) => (
             <Link

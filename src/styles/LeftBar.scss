@@ -1,5 +1,6 @@
 .lastestLaunchWrapper {
   width: 100%;
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -15,7 +16,6 @@
       align-items: center;
       box-sizing: border-box;
       // max-height: 25vh;
-      max-height: 40vh;
     }
       @media (orientation: landscape) {
         h3{
@@ -55,7 +55,7 @@
   }
 }
 .isExtendedOpacity{
-  animation: fadeInAnimation ease 2s;
+  animation: fadeInAnimation ease 1s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   @keyframes fadeInAnimation {
@@ -71,6 +71,9 @@
   font-size: 1.8vh !important;
   padding: 0;
   text-transform: none !important;
+  &:hover{
+    background-color: rgba(238, 238, 238, 0.2) !important;
+  }
   span{
     width: 100%;
   }
