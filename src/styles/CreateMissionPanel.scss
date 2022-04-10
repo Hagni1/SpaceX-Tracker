@@ -23,6 +23,15 @@
   flex-wrap: wrap;
 
   img {
-    height: 20%;
+    max-width: 100%;
+    @media (max-width: 768px) {
+    max-width: 25vw;
+    max-height: 20vh;
+    transition: 0.3s;
+    @media (orientation: landscape) {
+      max-height: 10vh;
+      width: auto;
+      }   
+    }
   }
 }

@@ -2,11 +2,26 @@
   width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
   @media (max-width: 768px) {
     flex-direction: column;
   }
   span {
-
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      // max-height: 25vh;
+      max-height: 40vh;
+    }
+      @media (orientation: landscape) {
+        h3{
+          font-size: 5vw;
+        }   
+    }
   h3{
     font-size: 2vh;
   }
@@ -21,9 +36,10 @@
   .lastestLaunchButton {
     position: absolute;
     top: 50vh;
+    z-index: 5;
     @media (max-width: 768px) {
       left: 45% !important;
-      top: 43vh;
+      top: 45vh;
     }
     left: 15%;
     padding: 2px;
@@ -39,12 +55,22 @@
   }
 }
 .isExtendedOpacity{
-  transition: 0.3s;
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  @keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
 }
 .MuiButton-text{
-  font-size: 1.8vh;
+  font-size: 1.8vh !important;
   padding: 0;
-  text-transform: none;
+  text-transform: none !important;
   span{
     width: 100%;
   }

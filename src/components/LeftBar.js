@@ -8,16 +8,16 @@ import theme from "../theme/AppTheme";
 const LeftBar = ({data, isExtended, setIsExtended}) => {
   const { rockets, launchPad, payLoads, crew, setSelected } = useContext(AppContext);
     return ( 
-        <section className={`lastestLaunch ${isExtended && "isExtended"}`}>
+        <section className={`lastestLaunch ${isExtended ? "isExtended": ''}`}>
         <Button
           theme={theme} color='primary'
-          className={`lastestLaunchButton ${isExtended && "isExtendedButton"}`}
+          className={`lastestLaunchButton ${isExtended ? "isExtendedButton":''}`}
           onClick={() => setIsExtended(!isExtended)}
         >
           {isExtended ? "<" : ">"}
         </Button>
-        <img src={data.links.patch.small} alt="" />
         <span>
+        <img src={data.links.patch.small} alt="" />
           <h3>Mision name:</h3>
           <p>{data.name}</p>
         </span>
@@ -49,8 +49,8 @@ const LeftBar = ({data, isExtended, setIsExtended}) => {
             <span className="isExtendedOpacity">
               {crew.isLoaded && (
                 <>
+
                   <h3>Crew:</h3>
-                  <span>
                     {crew.data.filter((item) =>
                       data.crew
                         .map((item) => item.crew)
@@ -64,8 +64,7 @@ const LeftBar = ({data, isExtended, setIsExtended}) => {
                           )
                           .map((item) =><Link to={`/Crew/${item.id}`}> <p key={item.name}><Button theme={theme} color='primary'>{item.name}</Button></p> </Link>)
                       : "unmanned"}
-                       <Link to='/Crew'><p><Button theme={theme} color='primary'>Check All Crew Members</Button></p></Link>
-                  </span>
+                       <Link to='/Crew'><Button  theme={theme} color='primary'>Check All Crew Members</Button></Link>
                 </>
               )}
             </span>
@@ -81,7 +80,7 @@ const LeftBar = ({data, isExtended, setIsExtended}) => {
                 </p>
               )}
             </span>
-            <span>
+            <span className="isExtendedOpacity">
               <h3>LaunchPad:</h3>
               {launchPad.isLoaded && (
                 <p>
@@ -93,7 +92,7 @@ const LeftBar = ({data, isExtended, setIsExtended}) => {
               )}
               <Link to='/LaunchPad'><Button theme={theme} color='primary'>Check LaunchPads</Button></Link>
             </span>
-            <span>
+            <span className="isExtendedOpacity">
               <h3>Region:</h3>
               {launchPad.isLoaded && (
                 <p>
@@ -104,7 +103,7 @@ const LeftBar = ({data, isExtended, setIsExtended}) => {
                 </p>
               )}
             </span>
-            <span>
+            <span className="isExtendedOpacity">
               <>
                 <h3>Mission details:</h3>
                 <p className="missionParagraph">
