@@ -4,6 +4,7 @@ import Routing from "./Routing";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import theme from '../theme/AppTheme'
+import Loader from "./Loader";
 function App() {
   return (
     <div className="App">
@@ -11,6 +12,7 @@ function App() {
         <img className="background" src={require("../img/header.jpg")} alt="" />
         <ThemeProvider theme={theme}>
           <AppProvider>
+            <Loader/>
             <Routing />
           </AppProvider>
         </ThemeProvider>

@@ -1,5 +1,5 @@
 import { Button, Grid, Table, TableCell, TableRow } from "@mui/material";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 import "../styles/CreateCrewMember.scss";
@@ -45,7 +45,7 @@ const CreateCrewMember = ({ data }) => {
             </TableRow>
         </Table>
           <a target="_blank" rel="noopener noreferrer" href={data.wikipedia}>
-            <button>Wikipedia</button>
+          <Button sx={{'margin-top':'5%'}} theme={theme} variant="outlined">Wikipedia</Button>
           </a>
         </Grid>
         <Grid item sm={6} className="gridLaunches">

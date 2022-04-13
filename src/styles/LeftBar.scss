@@ -5,17 +5,17 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     flex-direction: column;
   }
   span {
-    @media (max-width: 768px) {
+    @media (max-width: 1000px) {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       box-sizing: border-box;
-      // max-height: 25vh;
+      max-height: 25vh;
     }
       @media (orientation: landscape) {
         h3{
@@ -37,7 +37,7 @@
     position: absolute;
     top: 50vh;
     z-index: 5;
-    @media (max-width: 768px) {
+    @media (max-width: 1000px) {
       left: 45% !important;
       top: 45vh;
     }
@@ -46,7 +46,7 @@
     transition: 0.3s ease;
   }
   .isExtendedButton {
-    @media (max-width: 768px) {
+    @media (max-width: 1000px) {
       top: 93vh !important;
       left: 45% !important;
     }

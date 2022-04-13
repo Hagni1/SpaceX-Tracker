@@ -1,0 +1,46 @@
+.loader{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: 1s;
+    transform: translateY(100%);
+}
+
+.activeLoader{
+    animation: loader 1.5s ease ;
+}
+  @keyframes loader {
+    100% {
+        transform: translateY(-100%);
+    }
+    70% {
+        transform: translateY(0%);
+    }
+    30%{
+        transform: translateY(0%);
+    }
+    0% {
+        transform: translateY(100%);
+      }
+  }
+  .loaderRocketIcon{
+    animation: loaderSlide 1s ease-in-out infinite;
+  }
+  @keyframes loaderSlide {
+    0%,
+    100% {
+      transform: translate(-15px, 0) rotate(-45deg);
+    }
+  
+    50% {
+      transform: translate(15px, 0) rotate(-45deg);
+    }
+  }

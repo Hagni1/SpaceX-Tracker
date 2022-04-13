@@ -1,5 +1,5 @@
 .isExtendedVideo {
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     width: 100% !important;
   }
   width: 50%;
@@ -7,7 +7,7 @@
   transition: 0.3s ease;
   .videoImgWrapper {
     h2 {
-      @media (max-width: 768px) {
+      @media (max-width: 1000px) {
         top: 115vh;
       }
     }
@@ -18,7 +18,7 @@
     .videoImg {
       transition: 0.3s ease;
       width: 50%;
-      @media (max-width: 768px) {
+      @media (max-width: 1000px) {
         width: 100% !important;
         height: 50vh;
         top: 100vh;
@@ -29,7 +29,7 @@
 .lastestVideoWrapper {
   flex-grow: 1;
   height: 100vh;
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     width: 100%;
     height: 50vh;
   }
@@ -50,7 +50,7 @@
   transition: 0.3s ease;
   height: 100%;
   .videoBackground {
-    @media (min-width: 769px) {
+    @media (min-width: 1001px) {
       z-index: 2;
       background: url(../img/video.jpg);
       background-size: cover;
@@ -68,10 +68,10 @@
     top: 0%;
     position: absolute;
     width: 81%;
-    @media (min-width: 769px) {
+    @media (min-width: 1001px) {
       display: none;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 1000px) {
       object-fit: cover;
       object-position: center;
       width: 100%;
@@ -95,7 +95,7 @@
 }
 .isExtended {
   width: 50% !important;
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     width: 100% !important;
     height: 100vh !important;
   }
@@ -105,7 +105,7 @@
     .videoImg {
       transition: 0.3s ease;
       width: 64% !important;
-      @media (max-width: 768px) {
+      @media (max-width: 1000px) {
         width: 100% !important;
       }
     }

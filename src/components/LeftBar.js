@@ -5,7 +5,8 @@ import { AppContext } from "../context/AppContext";
 import '../styles/LeftBar.scss'
 import theme from "../theme/AppTheme";
 
-const LeftBar = ({data, isExtended, setIsExtended}) => {
+const LeftBar = ({ data, isExtended, setIsExtended }) => {
+  const {setIsFullyLoaded} = useContext(AppContext)
   const { rockets, launchPad, payLoads, crew, setSelected } = useContext(AppContext);
     return ( 
         <section className={`lastestLaunch ${isExtended ? "isExtended": ''}`}>
@@ -64,7 +65,7 @@ const LeftBar = ({data, isExtended, setIsExtended}) => {
                           )
                           .map((item) =><Link to={`/Crew/${item.id}`}> <p key={item.name}><Button theme={theme} color='primary'>{item.name}</Button></p> </Link>)
                       : "unmanned"}
-                       <Link to='/Crew'><Button  theme={theme} color='primary'>Check All Crew Members</Button></Link>
+                       <Link to='/Crew'><Button onClick={() => setIsFullyLoaded(false)}  theme={theme} color='primary'>Check All Crew Members</Button></Link>
                 </>
               )}
             </span>

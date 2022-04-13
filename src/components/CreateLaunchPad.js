@@ -21,7 +21,7 @@ const CreateLaunchPad = ({ data }) => {
       .then((response) => response.json())
       .then((data) => setWeather({ data, isLoaded: true }));
   }, [units]);
-  
+
   return (
     <div className="createLaunchPadWrapper">
       <Button
@@ -75,7 +75,7 @@ const CreateLaunchPad = ({ data }) => {
             </TableRow>
         </Table>
           <a target="_blank" rel="noopener noreferrer" href={data.wikipedia}>
-            <button>Wikipedia</button>
+          <Button sx={{'marginTop':'5%'}} theme={theme} variant="outlined">Wikipedia</Button>
           </a>
         </Grid>
         <Grid item xs={6} sm={12} lg={6}>

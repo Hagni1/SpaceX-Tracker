@@ -1,12 +1,13 @@
-import { Table, TableCell, TableRow } from "@mui/material";
+import { Button, Table, TableCell, TableRow } from "@mui/material";
 import "../styles/CreateRocket.scss";
-
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import theme from "../theme/AppTheme";
 const CreateRocket = ({ data,id,active,setSelected}) => {
   return (
     <div className={`CreateRocketWrapper ${active}`} id={id}>
       <div className="CreateRocket" >
-        <span />
-        <img onClick={()=>setSelected(false)} src={require(`../img/${(data.name).replace(/\s/g, "").toLowerCase()}.png`)} alt="falcon1" />
+        <h2 className="clickToGoBack"> click on rocket to go back <br/> <ArrowDownwardIcon className="arrowDown"/></h2>
+        <img className={(data.name).replace(/\s/g, "").toLowerCase()} onClick={()=>setSelected(false)} src={require(`../img/${(data.name).replace(/\s/g, "").toLowerCase()}.png`)} alt="rocket" />
         <div className="rocketDescript">
           <h1>{data.name}</h1>
         <Table>
@@ -43,14 +44,13 @@ const CreateRocket = ({ data,id,active,setSelected}) => {
                     <TableCell>{data.mass.kg} kg / {data.mass.lb} lb</TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell>Launch cost</TableCell>
+                    <TableCell>Cost per launch</TableCell>
                     <TableCell>{(data.cost_per_launch)} $</TableCell>
                 </TableRow>
           </Table>
           <a target="_blank" rel="noopener noreferrer" href={data.wikipedia}>
-            <button>Wikipedia</button>
+            <Button sx={{'margin-top':'5%'}} theme={theme} variant="outlined">Wikipedia</Button>
           </a>
-          <h2 className="clickToGoBack"> &lt;- click on rocket to go back</h2>
         </div>
       </div>
       <div className="rocketGallery">
